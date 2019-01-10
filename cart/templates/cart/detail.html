@@ -38,15 +38,15 @@
                         </td>
 
                         <td><a href="{% url "cart:cart_remove" product.id %}">Usun</a></td>
-                        <td class="num">PLN{{ item.price }}</td>
-                        <td class="num">PLN{{ item.total_price }}</td>
+                        <td class="num">PLN {{ item.price }}</td>
+                        <td class="num">PLN {{ item.total_price }}</td>
                     </tr>
                 {% endwith %}
             {% endfor %}
             <tr class="total">
                 <td>Razem</td>
                 <td colspan="4"></td>
-                <td class="num">PLN{{ cart.get_total_price }}</td>
+                <td class="num">PLN {{ cart.get_total_price }}</td>
             </tr>
         </tbody>
     </table>
