@@ -11,9 +11,20 @@
             <a href="/" class="logo">Sklep internetowy</a>
         </div>
         <div id="subheader">
+
             <div class="cart">
-            Twój koszyk jest pusty.
+                {% with total_items=cart|length %}
+                    {% if cart|length > 0  %}
+                        Twój koszyk <br>
+                        <a href="{% url "cart:cart_detail" %}">
+                            liczba produktów: {{ total_items }}, {{ cart.get_total_price }} PLN
+                        </a>
+                    {% else %}
+                        Twój koszyk jest pusty.
+                    {% endif %}
+                {% endwith %}
             </div>
+
         </div>
         <div id="content">
             {% block content %}

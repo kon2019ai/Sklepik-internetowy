@@ -843,6 +843,16 @@ table#change-history tbody th {
     text-decoration: underline;
 }
 
+#subheader {
+    width: auto;
+    height: 40px;
+	padding: 2px;
+    background:	#F5F5F5;
+    color: #000000;
+    overflow: hidden;
+	text-align: right;
+}
+
 #branding {
     float: left;
 }
