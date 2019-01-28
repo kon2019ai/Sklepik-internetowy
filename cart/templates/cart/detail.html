@@ -1,17 +1,17 @@
 {% extends "shop/base.html" %}
 {% load static %}
 {% block title %}
-    Twoj koszyk
+    Twój koszyk
 {% endblock %}
 {% block content %}
-    <h1>Twoj koszyk</h1>
+    <h1>Twój koszyk</h1>
     <table class="cart">
         <thead>
             <tr>
                 <th>Obraz</th>
                 <th>Produkt</th>
-                <th>Ilosc</th>
-                <th>Usun</th>
+                <th>Ilość</th>
+                <th>Usuń</th>
                 <th>Cena za szt.</th>
                 <th>Cena</th>
             </tr>
@@ -37,7 +37,7 @@
                             </form>
                         </td>
 
-                        <td><a href="{% url "cart:cart_remove" product.id %}">Usun</a></td>
+                        <td><a href="{% url "cart:cart_remove" product.id %}">Usuń</a></td>
                         <td class="num">PLN {{ item.price }}</td>
                         <td class="num">PLN {{ item.total_price }}</td>
                     </tr>
@@ -52,6 +52,6 @@
     </table>
     <p class="text-right">
         <a href="{% url "shop:product_list" %}" class="buttonlight">Kontynuuj zakupy</a>
-        <a href="#" class="button">Do kasy</a>
+        <a href="{% url "orders:order_create" %}" class="button">Złóż zamówienie</a>
     </p>
 {% endblock %}

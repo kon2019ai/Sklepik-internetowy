@@ -1,34 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>{% block title %}Sklep internetowy{% endblock %}</title>
-        <link href="{% static "css/base.css" %}" rel="stylesheet">
-    </head>
-    <body>
-        <div id="header">
-            <a href="/" class="logo">Sklep internetowy</a>
-        </div>
-        <div id="subheader">
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Sklep internetowy{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <a href="/" class="logo">Sklep internetowy</a>
+    </div>
+    <div id="subheader">
 
-            <div class="cart">
-                {% with total_items=cart|length %}
-                    {% if cart|length > 0  %}
-                        Twój koszyk <br>
-                        <a href="{% url "cart:cart_detail" %}">
-                            liczba produktów: {{ total_items }}, {{ cart.get_total_price }} PLN
-                        </a>
-                    {% else %}
-                        Twój koszyk jest pusty.
-                    {% endif %}
-                {% endwith %}
-            </div>
+        <div class="cart">
+            {% with total_items=cart|length %}
+                {% if cart|length > 0  %}
+                    Twój koszyk <br>
+                    <a href="{% url "cart:cart_detail" %}">
+                        liczba produktów: {{ total_items }}, {{ cart.get_total_price }} PLN
+                    </a>
+                {% else %}
+                    Twój koszyk jest pusty.
+                {% endif %}
+            {% endwith %}
+        </div>
 
-        </div>
-        <div id="content">
-            {% block content %}
-            {% endblock %}
-        </div>
-    </body>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
 </html>
